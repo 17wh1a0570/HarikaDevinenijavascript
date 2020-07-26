@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+	<script type="text/javascript">
+	function validation(){
+	    var user = document.getElementById('user').value;
+		var password = document.getElementById('password').value;
+		var email = document.getElementById('email').value;
+		var Mobilenumber = document.getElementById('Mobilenumber').value;
+		
+		if(user==""){
+	    document.getElementById('Username').innerHTML="***requried username";
+		return false;
+		}
+		if((user.length<=2)||(user.length>15)){
+        document.getElementById('Username').innerHTML="***length must between 2 and 15";
+	    return false;
+		}
+		if(password==""){
+		document.getElementById('pass').innerHTML="**fill the correct password";
+	    return false;
+		}
+		if((password.length<=5)||(password.length>15)){
+        document.getElementById('pass').innerHTML="***length must between 5 and 15";
+	    return false;
+		}  
+		if(email==""){
+		document.getElementById('Email').innerHTML="***fill the email field";
+	    return false;
+		}
+		if(email.indexOf('@')<=0){
+		document.getElementById('Email').innerHTML="@ is invalid position";
+	    return false;
+		}
+		if((email.charAt(email.length-4)!='.')&&(email.charAt(email.length-3)!='.')){
+		document.getElementById('Email').innerHTML=" . is at Inavalid position";
+	    return false;
+		}
+		if(Mobilenumber==""){
+		document.getElementById('mobilenumber').innerHTML="***fill Mobilenumber";
+	    return false;
+		}
+		if(isNaN(Mobilenumber)){
+        document.getElementById('mobilenumber').innerHTML="Please fill the Numbers";
+	    return false;
+		}
+		if(Mobilenumber.length!=10){
+        documensst.getElementById('mobilenumber').innerHTML="Please fill the 10 digit number";
+	    return false;
+		}
+	}
+	</script>
+<body>
+  <div class="container"><br>
+    <div class="col-lg-4 m-auto d-block">
+	<form action="#" onsubmit="return validation()">
+	<div class="form-group">
+	<label> username:</label>
+	<input type="text" name="User" class="form-control" id="user" autocomplete="off">
+	<span id="Username" class="text-danger font-weight-bold"></span>
+	</div>
+	<div class="form-group">
+	<label>password</label>
+	<input type="text" name="password" class="form-control" id="password" autocomplete="off">
+	<span id="pass" class="text-danger font-weight-bold"></span>
+	</div>
+	<div class="form-group">
+	<label> Email</label>
+	<input type="text" name="email" class="form-control" id="email" autocomplete="off">
+	<span id="Email" class="text-danger font-weight-bold"></span>
+	</div>
+	<div class="form-group">
+	<label>Mobilenumber</label>
+	<input type="text" name="Mobilenumber" class="form-control" id="Mobilenumber" autocomplete="off">
+	<span id="mobilenumber" class="text-danger font-weight-bold"></span>
+	</div>
+	<input type="submit" name="submit" value="submit" >
+	</form>
+	</div>
+	</div>
+</body>
+</html>
